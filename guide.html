@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fresh Eyes: a visual guide</title>
+<style>
+  :root{
+    --bg:#f6f4ef; --panel:#fffdf9; --ink:#232025; --muted:#6c6672;
+    --line:#e4ddd2; --accent:#2b4c7e; --accent-soft:#e7edf5;
+    --warm:#b4541f; --warm-soft:#f6e7dd; --shadow:0 1px 2px rgba(35,32,37,.06),0 8px 24px rgba(35,32,37,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#17161a; --panel:#201e24; --ink:#efe9e2; --muted:#a49caf;
+      --line:#332f39; --accent:#8fb0dd; --accent-soft:#22303f;
+      --warm:#e0995f; --warm-soft:#33241a; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:clamp(20px,5vw,64px) 20px;
+  }
+  .wrap{max-width:860px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);font-weight:700;margin:0 0 10px}
+  h1{font-size:clamp(30px,6vw,46px);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
+  h1 .em{color:var(--accent)}
+  .lede{font-size:clamp(17px,2.4vw,20px);color:var(--muted);margin:0 0 8px;max-width:60ch}
+  h2{font-size:22px;letter-spacing:-.01em;margin:44px 0 14px;padding-top:26px;border-top:1px solid var(--line)}
+  h3{font-size:16px;margin:0 0 6px}
+  p{margin:0 0 14px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+  .muted{color:var(--muted)}
+  .grid{display:grid;gap:16px}
+  @media(min-width:640px){.grid.two{grid-template-columns:1fr 1fr}}
+  .step{display:flex;gap:14px;align-items:flex-start;margin:0 0 12px}
+  .badge{flex:0 0 auto;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--accent-soft);color:var(--accent)}
+  .badge.warm{background:var(--warm-soft);color:var(--warm)}
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin:6px 0 4px}
+  .flow .node{flex:1 1 150px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .flow .node .k{font-weight:700;margin-bottom:2px}
+  .flow .arrow{align-self:center;color:var(--muted);font-size:20px;flex:0 0 auto}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0}
+  .chip{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
+  .callout{background:var(--warm-soft);border:1px solid color-mix(in srgb,var(--warm) 30%,transparent);border-radius:12px;padding:16px 18px}
+  .callout strong{color:var(--warm)}
+  code{background:var(--accent-soft);color:var(--accent);padding:2px 7px;border-radius:6px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+  pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:8px 0 0}
+  pre code{background:none;color:var(--ink);padding:0}
+  .tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px;margin-bottom:8px}
+  .tag.code{background:var(--accent-soft);color:var(--accent)}
+  .tag.chat{background:var(--warm-soft);color:var(--warm)}
+  ul{margin:6px 0 0;padding-left:20px}
+  li{margin:0 0 6px}
+  .foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Skill guide</p>
+  <h1>Fresh Eyes<br><span class="em">criticize · improvise · synthesize</span></h1>
+  <p class="lede">Get a real second opinion on any piece of thinking. You get one stronger version back, plus the question you didn’t think to ask.</p>
+
+  <h2>What it does</h2>
+  <p>You’ve been staring at something you made (a plan, a design, a pitch, some copy, a decision, code) and you’ve gone a little blind to its flaws. Fresh Eyes brings in an <strong>outside perspective</strong> that doesn’t defend your choices. It attacks the work, invents better options, and hands you back <strong>one clear recommendation you can act on</strong>.</p>
+
+  <div class="panel">
+    <p style="margin:0 0 12px" class="muted">The core loop. Every run does all three, in order:</p>
+    <div class="flow">
+      <div class="node"><div class="k">1 · Criticize</div><div class="muted">Find the real weak spots, risks &amp; blind spots.</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="k">2 · Improvise</div><div class="muted">Better versions, different approaches, an angle nobody asked for.</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="k">3 · Synthesize</div><div class="muted">Merge the best into one ranked recommendation.</div></div>
+    </div>
+    <div class="callout" style="margin-top:16px">
+      <strong>Plus: the question you didn’t ask.</strong> Every run surfaces the thing one level up: the decision you should settle first, or the wrong assumption baked into your question. Often the most valuable line in the whole report.
+    </div>
+  </div>
+
+  <h2>One skill, two engines, and it picks for you</h2>
+  <p>Fresh Eyes runs one of two ways, and <strong>chooses automatically</strong> based on where it’s running. Same folder, both places. You never pick.</p>
+
+  <div class="grid two">
+    <div class="panel">
+      <span class="tag code">In Claude Code</span>
+      <h3>The fan-out engine</h3>
+      <p class="muted" style="margin:0">Spins up several <strong>independent</strong> reviewers, each starting blind so they can’t just agree with you. Then the cool part, a <strong>“trade homework” round</strong>: each reviewer attacks <em>another’s</em> new ideas, so nothing fresh sneaks through unchecked. Then one synthesis.</p>
+    </div>
+    <div class="panel">
+      <span class="tag chat">In the Claude app</span>
+      <h3>The single-mind engine</h3>
+      <p class="muted" style="margin:0">The chat app can’t spawn separate helpers, so <strong>one mind</strong> runs the same critique, improve, synthesize discipline in sequence: it commits a guess up front, then hunts it down and argues against itself. Honest about not having true outside eyes.</p>
+    </div>
+  </div>
+  <p class="muted" style="margin-top:14px;font-size:14px">Why two? The powerful method needs tools that only Claude Code has. Rather than make you keep two skills straight, this one adapts, loading only the engine it’s actually using, so neither side carries the other’s weight.</p>
+
+  <h2>How to use it</h2>
+  <p>No commands. Just ask in plain words and hand it the thing to look at:</p>
+  <div class="chips">
+    <span class="chip">“fresh eyes on this”</span>
+    <span class="chip">“pressure-test this plan”</span>
+    <span class="chip">“poke holes and make it better”</span>
+    <span class="chip">“what am I missing?”</span>
+    <span class="chip">“what would someone else say?”</span>
+  </div>
+  <div class="callout" style="margin-top:16px">
+    <strong>What it’s not for:</strong> “Is this correct / done / ready to ship?” That’s a <em>verification</em> pass, a different job. Fresh Eyes makes your thinking <em>better</em>; it doesn’t sign off that it’s <em>right</em>.
+  </div>
+
+  <h2>Installing it</h2>
+  <p class="muted" style="margin-bottom:16px">Skills don’t sync between Claude Code and the app, so install the same folder in each place you want it.</p>
+  <div class="grid two">
+    <div class="panel">
+      <span class="tag code">Claude Code</span>
+      <h3>Drop in the folder</h3>
+      <p class="muted" style="margin:0 0 4px">Put the <code>fresh-eyes</code> folder in your skills directory:</p>
+      <pre><code>cp -R fresh-eyes ~/.claude/skills/fresh-eyes</code></pre>
+      <p class="muted" style="margin:10px 0 0">Start a new session and it’s picked up automatically.</p>
+    </div>
+    <div class="panel">
+      <span class="tag chat">Claude app (claude.ai)</span>
+      <h3>Upload the zip</h3>
+      <p class="muted" style="margin:0">Go to <strong>Settings → Features</strong> and upload the skill <code>.zip</code> under custom skills. Needs a Pro / Max / Team / Enterprise plan with code execution on.</p>
+    </div>
+  </div>
+
+  <p class="foot">Fresh Eyes is a set of instructions, nothing more. It writes nothing outside its own folder. Full details in <code>README.md</code>. The two methods live in <code>references/fan-out.md</code> and <code>references/single-mind.md</code>.</p>
+
+</div>
+</body>
+</html>
