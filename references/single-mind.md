@@ -1,10 +1,10 @@
 # Fresh Eyes — SINGLE-MIND method (one context, no subagents)
 
-> **Independence upgrade:** if a second AI provider's CLI is installed on this
-> machine, give it one reviewer seat — see
-> [`second-provider.md`](second-provider.md). A different vendor's model has
-> different priors, so its agreement is real evidence and its disagreement is
-> worth chasing. If none is installed, run this as written and say so.
+> **Independence tier:** if this environment has a routing or offload skill, it
+> names an outside reviewer — give one seat to that and you reach the top tier
+> (see the router's independence section). If it does not, run this as written
+> and **say in the result that every reviewer shared one model's priors**, so
+> their agreement is weaker evidence than it looks.
 
 > You were routed here because this environment has **no way to dispatch
 > independent parallel reviewers** (a single chat context). One mind runs the

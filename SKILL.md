@@ -13,9 +13,7 @@ description: >-
   X", "pressure-test this", "stress-test this", "red-team this", "poke holes and
   make it better", "get independent eyes on X", "what am I missing", "what would
   someone else say". Lean toward firing whenever the user wants outside
-  perspective or an impartial re-examination of a piece of thinking. If a second
-  AI provider's CLI is installed, it gives one reviewer seat to that provider —
-  the strongest independence available.
+  perspective or an impartial re-examination of a piece of thinking.
 ---
 
 # Fresh Eyes — router
@@ -63,24 +61,37 @@ spawn independent parallel agents, use the **single-mind method** — it always
 works, and it is honest about not having outside eyes. Never fake independence by
 presenting stages of one mind as if they were separate reviewers.
 
-## Then check for the independence upgrade (both methods)
+## How independent is "independent"? (read before you pick)
 
-Both methods above run on **one vendor's model**. A fresh context is blind to the
-reasoning, but it still shares the model's priors, blind spots, and the things it
-finds obvious. A **different company's model** does not — which makes it the
-strongest independence obtainable here.
+The two methods are not arbitrary — they sit at different points on one axis, and
+knowing the axis tells you how much to trust the result.
 
-So, whichever method you picked: **if a second provider's CLI is installed, give
-it at least one reviewer seat.** It is close to free — review is read-only, so a
-bad reviewer cannot break anything — and it bills to a different subscription
-than the one running this session.
+Independence comes in tiers, weakest to strongest:
 
-→ **If a second provider is available, read and follow
-[`references/second-provider.md`](references/second-provider.md)** alongside your
-method file.
+1. **Same mind, same context** — re-reading your own work and nodding. This is
+   not independence at all. It is what "fresh eyes" is called in to replace, and
+   it is forbidden here.
+2. **Same mind, disciplined stances** — the single-mind method. One context runs
+   the adversarial stances serially under strict rules. Discipline substitutes
+   for independence; it does not equal it.
+3. **Same model, separate contexts** — the fan-out method. Reviewers are
+   genuinely blind to each other's reasoning, which is a real gain. But they
+   still share one model's priors, blind spots, and sense of what is obvious, so
+   their agreement is less independent than it feels.
+4. **A genuinely outside reviewer** — a different model, or a person. Different
+   priors, different failure modes, different things it finds obvious. Agreement
+   here is the strongest evidence this skill can produce; disagreement is the
+   most worth chasing.
 
-If none is installed, run the method as written and **say so in the result** —
-that the reviewers shared one model's priors, so agreement between them is weaker
-evidence than it looks. Never imply outside eyes you did not have.
+**Name the tier you actually achieved, in the result.** If four reviewers agreed
+but all four were the same model, say so — that is tier 3, and the user should
+discount it accordingly. Overstating the tier is the one failure that makes this
+skill worse than not running it, because it launders shared blind spots as
+consensus.
+
+**If this environment has a routing or offload skill**, it names whatever outside
+reviewer is available here — give one reviewer seat to that, and you reach tier 4.
+Follow that skill for how to invoke it; this skill does not care which one it is,
+only that you disclose what you got.
 
 Load only the one method file you need — the other stays on disk and costs nothing.

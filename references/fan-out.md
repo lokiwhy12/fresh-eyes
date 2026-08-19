@@ -1,10 +1,10 @@
 # Fresh Eyes — FAN-OUT method (independent multi-agent)
 
-> **Independence upgrade:** if a second AI provider's CLI is installed on this
-> machine, give it one reviewer seat — see
-> [`second-provider.md`](second-provider.md). A different vendor's model has
-> different priors, so its agreement is real evidence and its disagreement is
-> worth chasing. If none is installed, run this as written and say so.
+> **Independence tier:** if this environment has a routing or offload skill, it
+> names an outside reviewer — give one seat to that and you reach the top tier
+> (see the router's independence section). If it does not, run this as written
+> and **say in the result that every reviewer shared one model's priors**, so
+> their agreement is weaker evidence than it looks.
 
 > ROUTED HERE because this environment CAN dispatch independent parallel reviewers.
 > IF you cannot actually spawn independent agents -> STOP, use `single-mind.md`.
