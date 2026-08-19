@@ -1,15 +1,25 @@
 # Fresh Eyes — SINGLE-MIND method (one context, no subagents)
 
+> **Independence upgrade:** if a second AI provider's CLI is installed on this
+> machine, give it one reviewer seat — see
+> [`second-provider.md`](second-provider.md). A different vendor's model has
+> different priors, so its agreement is real evidence and its disagreement is
+> worth chasing. If none is installed, run this as written and say so.
+
 > You were routed here because this environment has **no way to dispatch
 > independent parallel reviewers** (a single chat context). One mind runs the
 > whole pass, serially, under strict discipline. Discipline substitutes for
 > independence — but it is NOT independence, and you must say so honestly.
 
-PURPOSE: pressure-test AND improve any artifact (plan, spec, design, strategy,
-copy, decision, architecture — not only code); emit ONE value-ranked
-recommendation OR a justified "leave it alone".
+<!-- SYNC NOTE: shared doctrine lives in BOTH method files by design (no shared-core file). When you edit any of these blocks here, mirror it in references/fan-out.md: SCOPE_BOUNDARY · the three IMPROVISE classes · the keep-it/leave-it GAUNTLET rule · the UNASKED_QUESTION classes · the AXIS-DISCLOSURE family line · the recommendation-first OUTPUT skeleton. -->
+
+PURPOSE: independently RE-EXAMINE any artifact (plan, spec, design, strategy,
+copy, decision, architecture — not only code) from a blank slate — attack it AND
+rebuild it with real alternatives — then emit ONE value-ranked call: strengthen it,
+rethink it, OR a justified "leave it alone". Generating real alternatives is mandatory;
+it is the rigor that earns the verdict, not the goal.
 MODE: single model, single context, sequential. No subagents, no fan-out.
-Generative (improve), NOT convergent (verify).
+Attack-and-rebuild with an OPEN verdict (keep / strengthen / rethink), NOT a correctness-verification pass.
 
 ## MODEL_GATE  (advisory: cannot enforce — redirect only)
 REQUIRE = the strongest reasoning-tier model available — the current provider's flagship, any provider. Brand- and version-agnostic.
@@ -28,8 +38,8 @@ SELF-CHECK (active model):
 - FAIL_HARD — no fake-independence theater: do NOT present "Agent 1 / Agent 2 / Reviewer B" as separate independent reviewers. Stances are lenses ONE mind adopts openly and serially. Name them as such.
 
 ## SCOPE_BOUNDARY
-- IN SCOPE (fresh-eyes): "make X better / stronger / different" -> generative.
-- OUT OF SCOPE (separate verification pass): "is X correct / done / ready to ship?" -> convergent.
+- IN SCOPE (fresh-eyes): "is this the right thing / best approach — re-examine it" -> attack + rebuild, OPEN verdict (keep / strengthen / rethink).
+- OUT OF SCOPE (separate verification pass): "is X correct / done / ready to ship?" -> correctness-verification.
 - IF both requested -> run fresh-eyes on the design, then a SEPARATE verification pass; state which you are doing.
 
 ## SCALE  (size the output, NOT the rigor)
@@ -42,7 +52,8 @@ DOWNSCOPE is explicit-only: if the user asks for less ("just the top risk", "one
 ## PIPELINE  (ordered; do not reorder)
 
 ### STAGE_0 — FRAME + SEAL
-DO: restate in own words (a) the artifact, (b) the GOAL = target OUTCOME, not implementation ("win back churned users", not "improve this subject line"). GOAL is the success criterion everything grades against.
+DO (FIRST, before you write the goal): name your LEANING = the option you're hoping survives / the answer you're afraid of. On a single mind you can't hide intent from yourself — and it smuggles itself in through how you word the goal and which stances you pick. Name it, then hunt it.
+DO: restate in own words (a) the artifact, (b) the GOAL = target OUTCOME, not implementation ("win back churned users", not "improve this subject line"), and SOLUTION-FREE — name no favored fix and imply no answer; a goal that smuggles the answer pre-rigs the pass. GOAL is the success criterion everything grades against.
 DO: write SEALED_READ = 2-3 lines = the verdict/recommendation you currently believe.
 RULE: SEALED_READ is FROZEN until Stage 4. Do not revise mid-run.
 WHY: you cannot hide intent from yourself the way a fan-out hides it from blind agents -> so surface it, then argue against it. This is the debias spine.
@@ -83,7 +94,7 @@ RULE "leave it alone" — EARNED, not defaulted:
 - allowed output: "the original wins; here is what was tried against it and why nothing beat it."
 - do NOT manufacture an improvement just because Stage 2 produced candidates.
 - DANGER (single mind): "the original wins" is exactly what an anchored reviewer WANTS to conclude. Chat must gate this HARDER than a fan-out — there, blind independent reviewers make "nothing beat it" trustworthy; here the same mind built the thing.
-- LEGAL ONLY IF: candidates were steelmanned/strong AND beaten ON THE MERITS (not set up to lose) AND the gauntlet is shown (what competed; how each fell short).
+- LEGAL ONLY IF: candidates were steelmanned/strong AND beaten ON THE MERITS (not set up to lose) AND the gauntlet is shown (what competed; how each fell short). The gauntlet is a REQUIRED output line on a "leave it alone" verdict (see OUTPUT), not optional prose — no gauntlet = a rubber-stamp, not a result.
 - MAX_SUSPICION: SEALED_READ == "leave it alone" AND verdict == "leave it alone" -> raise the bar, do not lower it; prove the pass had teeth before signing off.
 SURFACE_UNASKED: carry the UNASKED_QUESTION line into the output. If real (not null) -> do NOT bury it in the recommendation; give it its own line, and if load-bearing place it ABOVE the recommendation ("before acting on any of the below, the real question is ___"). A better answer to the wrong question is worth less than the right question. IF null -> drop the line.
 SELECT:
@@ -92,11 +103,16 @@ SELECT:
 - resolve forks: pick a side + say why, OR name a genuine user-only fork. NEVER hand back an unrefereed "A or B".
 CLOSE: name what the artifact got RIGHT (don't leave the user without a floor to build on).
 
-## OUTPUT  (human-readable template — emit in this exact shape)
+## OUTPUT  (recommendation FIRST — the call before the working; emit in this shape)
+NAME NO INTERNALS in what the owner reads — lead with the call. This is a single disciplined pass, NOT independent eyes; the header says so honestly and claims no corroboration.
 ```
-FRESH EYES (single-pass on <active model>) — stances: <skeptic / customer / contrarian…>.
+FRESH EYES (single disciplined pass — one mind, no independent eyes).
 
-Sealed read (Stage 0): <the verdict you committed before digging in>.
+<IF a load-bearing unasked-question landed, it goes HERE, above the call: "Before acting on any of this, the real question is ___.">
+Recommendation: <one integrated path, (recommended), stated first>. Because <brief reason>.
+
+— how it held up (optional depth) —
+Sealed read (before digging in): <the verdict you committed at Stage 0>.
 What moved it: <what you changed / what survived / what you dropped — or "nothing moved me, and here's why the pass had real teeth">.
 Strongest critiques: <ranked, the ones that actually bite>.
 Best improvements, ranked by outcome value:
@@ -105,11 +121,11 @@ Best improvements, ranked by outcome value:
 Weaknesses now solved: <weakness -> the fix that folds into the recommendation>.
 The real fork (if any): <A vs B — the honest tension, not smoothed>.
 Unexpected angle worth keeping: <the non-obvious one that survived attack, or "none landed">.
-
-The question you didn't ask: <highest-value unasked question — prior decision / symptom check / assumption baked into the ask; or "none — the question was well-scoped">.
-
-Recommendation: <one integrated path, (recommended), stated first>. Because <brief reason>.
+The gauntlet (REQUIRED when the verdict is "leave it alone"): <the candidates tried against the original + exactly why each lost — no gauntlet = a rubber-stamp, not a verdict>.
+The question you didn't ask (if not already placed above): <the unasked question, or "none — well-scoped">.
 ```
+<!-- SYNC: the AXIS-DISCLOSURE line + the recommendation-first OUTPUT skeleton are shared doctrine — mirror any change in references/fan-out.md -->
+AXIS-DISCLOSURE + SIBLING HANDOFF (family convention): if the artifact has multiple quality axes, name the ONE you judged, name the sibling axes you did NOT, and offer them — e.g. "I pressure-tested your thinking/decision here; your visual design, ask-placement, and attention/retention are separate passes I did NOT run — want me to take any of those on?". And distinguish this from any verification/audit macro the user has — the word "audit" collides: fresh-eyes re-examines the thinking (open verdict — keep / strengthen / rethink); it does NOT verify that X is correct or ready to ship.
 ## CHECKS
 FAIL IF:
 - agreed with SEALED_READ while the adversarial pass had no bite (rubber-stamp) -> rerun Stage 1 harder and meaner.

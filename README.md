@@ -4,10 +4,10 @@
 > Fresh Eyes is a **skill** that gets a real second opinion on any piece of
 > thinking — a plan, a design, a pitch, a business decision, a bit of copy, an
 > architecture, code. You point it at something you made and it **tears into it,
-> proposes better ideas, and hands you back one improved recommendation** — plus
-> "the question you should have asked but didn't." It does **not** just check
-> whether something is *correct* (that's a separate verification pass); it makes
-> your thinking *stronger*. Open **[`guide.html`](guide.html)** in a browser for a
+> rebuilds it with real alternatives, and hands you back one honest call — keep it,
+> strengthen it, or rethink it** — plus "the question you should have asked but
+> didn't." It does **not** check whether something is *correct* (that's a separate
+> verification pass); it re-examines whether it's the right thinking. Open **[`guide.html`](guide.html)** in a browser for a
 > 2-minute visual walkthrough.
 
 One skill, two engines under the hood — and it picks the right one automatically:
@@ -66,10 +66,10 @@ make it better,"* *"what am I missing here,"* *"what would someone else say abou
 this?"*
 
 Give it the thing you want looked at (paste it, or point Claude at the file) and
-what you're actually trying to achieve. It comes back with: the strongest
+what you're actually trying to achieve. It comes back **leading with one clear
+recommendation you can act on** — then, as optional depth: the strongest
 criticisms, the best improvements ranked by how much they matter, any real
-either/or you have to decide, and the unasked question — ending in one clear
-recommendation you can act on.
+either/or you have to decide, and the unasked question.
 
 **What it's *not* for:** "is this code correct / done / ready to ship?" That's a
 verification pass, a different job. Fresh Eyes makes things *better*, it doesn't

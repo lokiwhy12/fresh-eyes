@@ -1,11 +1,20 @@
 # Fresh Eyes — FAN-OUT method (independent multi-agent)
 
+> **Independence upgrade:** if a second AI provider's CLI is installed on this
+> machine, give it one reviewer seat — see
+> [`second-provider.md`](second-provider.md). A different vendor's model has
+> different priors, so its agreement is real evidence and its disagreement is
+> worth chasing. If none is installed, run this as written and say so.
+
 > ROUTED HERE because this environment CAN dispatch independent parallel reviewers.
 > IF you cannot actually spawn independent agents -> STOP, use `single-mind.md`.
 > NEVER fake independence (one mind's staged output presented as separate reviewers).
 
-PURPOSE: pressure-test AND improve any artifact (plan, spec, design, strategy, copy, decision, architecture, code); emit ONE value-ranked recommendation OR a justified "leave it alone".
-MODE: N blind independent agents + (big calls) cross-examination + your synthesis. Generative (improve), NOT convergent (verify).
+<!-- SYNC NOTE: shared doctrine lives in BOTH method files by design (no shared-core file). When you edit any of these blocks here, mirror it in references/single-mind.md: SCOPE_BOUNDARY · the three IMPROVISE classes · the keep-it/leave-it GAUNTLET rule · the UNASKED_QUESTION classes · the AXIS-DISCLOSURE family line · the recommendation-first OUTPUT skeleton. -->
+
+
+PURPOSE: independently RE-EXAMINE any artifact (plan, spec, design, strategy, copy, decision, architecture, code) from a blank slate — attack it AND rebuild it with real alternatives — then emit ONE value-ranked call: strengthen it, rethink it, OR a justified "leave it alone". Generating real alternatives is mandatory; it is the rigor that earns the verdict, not the goal.
+MODE: N blind independent agents + (big calls) cross-examination + your synthesis. Attack-and-rebuild with an OPEN verdict (keep / strengthen / rethink), NOT a correctness-verification pass.
 
 ## IDENTITY  (the mechanism; this governs behavior)
 CORE = INDEPENDENCE: minds with no stake in the current version, no memory of how it was meant to work, attacking + rebuilding it from a blank slate.
@@ -13,13 +22,13 @@ FAIL_HARD — do NOT let the fresh agents grade your homework: hand them the art
 STAGES: criticize -> improvise -> synthesize. ALL mandatory. Skip improvise = a nitpick pass. Skip synthesize = a pile of opinions instead of a decision.
 
 ## SCOPE_BOUNDARY
-IN (fresh-eyes): "make X better / stronger / different" -> generative.
-OUT (separate verification pass): "is X correct / done / ready to ship?" -> convergent.
+IN (fresh-eyes): "is this the right thing / best approach — re-examine it" -> attack + rebuild, OPEN verdict (keep / strengthen / rethink).
+OUT (separate verification pass): "is X correct / done / ready to ship?" -> correctness-verification.
 BOTH requested -> run fresh-eyes on the design, THEN hand the result to a separate verification pass; SAY which you are doing.
 
 ## SCALE — pick fan-out WIDTH first
 Stages are FIXED; width + lens diversity scale.
-- QUICK_GUT_CHECK (a paragraph, a small decision) = 2-3 agents, same generalist brief; you just want non-correlated reads. ROUND 1 ONLY — no Round 2 (over-build at this tier).
+- QUICK_GUT_CHECK (a paragraph, a small decision) = 2-3 agents, same generalist brief; you just want non-correlated reads — treat any overlap as "worth a look", NEVER as corroboration; no proof-from-agreement claims at this tier. ROUND 1 ONLY — no Round 2 (over-build at this tier).
 - BIG_DECISION (strategy, architecture, money, a launch — anything acted on hard / not cheaply unwound) = 4-6 agents, EACH handed an explicit DISTINCT lens. ROUND 1 + ROUND 2.
 LENSES (one per agent; NON-overlapping — overlap wastes the fan-out): skeptic (assume it fails; find why first) · customer (who's it for; do they care; what do they resent) · competitor (how it's beaten / routed around) · cost_realist (what it actually takes) · contrarian (the opposite bet) · simplifier (what if half is unnecessary) · domain_expert (deep on pricing / security / copy / ops).
 UNSURE how wide -> GO WIDER. Independent agents are cheap; a weak decision someone ships on is not.
@@ -34,10 +43,14 @@ PIPELINE: Round 1 (independent) -> Round 2 (cross-exam, BIG only) -> Synthesis (
 ROUND 2 IS ADDITIVE, never a replacement: Round 1 stays fully independent + blind (that signal is the core asset). Round 2 stresses the NEW ideas; it never re-runs, edits, or overwrites them.
 
 ## THE BRIEF — hand each agent this and ONLY this
+
+**FIRST, seal your own leaning (debias step — do this BEFORE you write the goal).** In one line, name the option you're hoping survives / the answer you're afraid of. Your leaning does not leak through the artifact — it leaks through (1) how you word the goal and (2) which lenses you pick. Naming it up front is what lets you catch both channels. Keep it sealed; reveal it only at synthesis (SEAL FIRST, below, already requires this).
+
 1. THE ARTIFACT, verbatim — the actual plan / spec / copy / decision, in full. Paste it or point at the exact file. NOT your summary of it.
-2. THE GOAL, 1-2 plain lines = the target OUTCOME, not the implementation ("win back churned users", not "improve this email's subject line"). The success criterion they grade against. No goal -> they critique in a vacuum. Your intent -> they just ratify. GIVE the goal, WITHHOLD the intent.
+2. THE GOAL, 1-2 plain lines = the target OUTCOME, not the implementation ("win back churned users", not "improve this email's subject line"). SOLUTION-FREE: it must name NO favored fix and imply no answer — if your goal line hints at the option you want, or reads as "should we do X?", it is leaking; rewrite it outcome-only. The success criterion they grade against. No goal -> they critique in a vacuum. Your intent -> they just ratify. GIVE the goal, WITHHOLD the intent.
 3. THE OUTPUT CONTRACT (below) — load-bearing; without it agents default to a list of nitpicks and skip the improvement, the half that matters most.
-4. (BIG only) their assigned LENS.
+4. (BIG only) their assigned LENS — and at the big-decision tier hand out the FULL non-overlapping roster, do NOT hand-pick a subset. Cherry-picking lenses (running only cost_realist, say) is itself a debias leak: it quietly buries the options you'd rather not have examined. The whole roster, not the ones that suit your leaning.
+5. (BIG + genuinely CROSS-DOMAIN only) LENS DOCTRINE — when the artifact really spans a sibling skill's domain (a full sales video also lives or dies on its hooks; a launch page also has ask-placement and visual design), you MAY hand ONE agent a domain doctrine file as its judging rubric — a FILE-READ (point it at whatever method file covers that domain), NOT a skill-to-skill call. Scope hard: cross-domain artifacts worth a big-decision fan-out only. A single tweet's cold open or one paywall stays single-mind and does NOT get this.
 WITHHOLD deliberately: conversation history · how you got here · what you're leaning toward · your own critique or preferred fix · which option is the favorite · prior objections · sunk-cost framing. The blank slate IS the asset — protect it.
 
 ## ROUND 1 — every agent does all three stages
@@ -67,6 +80,7 @@ SHAPE: `weaknesses[] · better-alternatives[] · different-approaches[] · unexp
 EMPTY SECTION = FAILED RETURN — except unasked-question, where an honest "well-scoped, nothing upstream" is valid, not a miss.
 Agents do NOT rank across each other — that is YOUR job.
 KEEP each Round-1 stack INTACT + LABELED (Stack A = skeptic, Stack B = customer, …). Round 2 + synthesis reference them by label. Originals are NEVER edited.
+LEAK TRIPWIRE (check every return): if an agent quotes your intent back, names the option you favored, or grades against your preferred fix instead of the GOAL, the brief LEAKED — flag the run DEGRADED and re-dispatch that agent (or the round) with a clean brief. An agent that absorbed your leaning is not an independent read; counting it as one is the exact failure the blind fan-out exists to prevent.
 
 ## ROUND 2 — CROSS-EXAMINATION  (BIG_DECISION TIER ONLY)
 STAKES_GATE: fires ONLY on the big-decision tier — a launch, an architecture, a money call, a strategy. A quick gut-check does NOT get a Round 2. UNSURE which tier -> you're in gut-check -> skip Round 2, go straight to synthesis.
@@ -124,43 +138,49 @@ CONSUME BOTH LAYERS (when Round 2 ran):
 - Peer who HONESTLY DIVERGED (kept their own read) -> high-signal disagreement. A fork to surface, not to smooth.
 (No Round 2 / gut-check -> synthesize the Round-1 stacks alone, same steps.)
 
-1. CLUSTER: where did independents CONVERGE (a point multiple blind reads hit unprompted = high signal) vs genuinely DIVERGE (a real fork to surface, not paper over)? Did Round 2 CONFIRM a cluster or CRACK it?
+1. CLUSTER: where did independents CONVERGE vs genuinely DIVERGE (a real fork to surface, not paper over)? Did Round 2 CONFIRM a cluster or CRACK it? READ CONVERGENCE HONESTLY: the agents are the SAME model, so they share blind spots — agreement means a point is SALIENT and survived reframing, NOT that it is proven correct. Weight it by LENS-DISTANCE: a skeptic and a customer landing on the same point is real signal; two similar lenses agreeing is near-noise; a lone sharp dissent can outrank a same-lens chorus. Never sell "they agreed" to the owner as proof.
 2. TAKE THE BEST + name the tradeoffs: pull the strongest critique · the strongest SURVIVING alternative · the sharpest unexpected angle that held up — across agents and both rounds. A FUSION is allowed (A's structure + B's reframe + the R2 fix that de-risked it), not just a winner off the shelf. KEEP a minority unexpected_angle if it's the best idea in the room AND it survived attack — don't discard it for being lonely. State competing directions' real tension plainly.
 3. RANK by durable OUTCOME VALUE, not ease of build. Cost = a separate note, NEVER the deciding axis. The cheap-but-shallow fix does not outrank the harder change that compounds. Don't recommend the thin option and park the rest "for later" unless a real dependency or risk forces it. Name the cost honestly — then let value lead.
 4. RESOLVE, don't dodge: where agents conflict, pick a side + say why, OR name it a genuine fork only the owner can call. NEVER hand back an unrefereed "A or B".
 
 SURFACE_UNASKED — prominently, BEFORE you finalize:
 Collect the unasked-question lines. ALL honest nulls -> drop the line and move on.
-A real one landed -> give it its OWN line; do NOT bury it inside the recommendation. MULTIPLE blind reads hitting it independently = highest signal (same convergence logic as clustered weaknesses). Load-bearing -> place it ABOVE the recommendation: "before acting on any of the below, the real question is ___".
+A real one landed -> give it its OWN line; do NOT bury it inside the recommendation. MULTIPLE blind reads hitting it independently = strongest SALIENCE (worth surfacing, still not proof — same-model reads share blind spots), same convergence logic as clustered weaknesses. Load-bearing -> place it ABOVE the recommendation: "before acting on any of the below, the real question is ___".
 WHY: a better answer to the wrong question is worth less than the right question.
 
 "KEEP THE ORIGINAL" — legitimate, and the verdict to DISTRUST MOST:
 Improvise FORCES every agent to generate ideas -> that guarantees volume, not merit. If nothing beats the original on durable value, "keep it as-is" is the RIGHT call — say so plainly and show what was tried against it. Never promote a manufactured improvement just because the pipeline produced many.
-LEGAL ONLY IF: candidates were STEELMANNED (no sandbagging) AND beaten ON THE MERITS AND the GAUNTLET IS SHOWN (the real candidates + exactly why each lost).
+LEGAL ONLY IF: candidates were STEELMANNED (no sandbagging) AND beaten ON THE MERITS AND the GAUNTLET IS SHOWN (the real candidates + exactly why each lost). The gauntlet is a REQUIRED output line on any "keep it" verdict (see OUTPUT), not optional prose — no gauntlet shown = a rubber-stamp, not a result.
 MAX_SUSPICION: SEALED_READ == "keep it" AND verdict == "keep it" -> treat that agreement as the single most likely place the un-blind synthesizer rubber-stamped its own prior. The bar goes UP, not down: produce the strongest steelmanned challenger you can and show it STILL lost, or change the verdict.
 CALIBRATION: a tool that can only ever return "here's something better" is one you learn to ignore; letting it honestly decline is what makes its pushes mean something — don't spend that credibility on a polite revert.
 
-## OUTPUT  (plain English -> options -> recommendation -> reason; emit this shape)
+## OUTPUT  (recommendation FIRST — the call before the machinery; plain English, emit this shape)
+NAME NO INTERNALS in what the owner reads: no "agent", "Round 2", "lens", "stack", "cross-examination" in the headline or the recommendation. The ONE exception is the confidence tag — how many blind reads clustered on the call — because that basis is decision-relevant (and per convergence-honesty it means "salient", NOT "proven"). The owner gets the call at the top; everything else is optional depth below.
 ```
-FRESH EYES — <N> independent agents<, lenses: skeptic / customer / contrarian…>< · Round 2: yes/no>.
+FRESH EYES — <confidence tag, e.g. "from 6 blind reads that clustered here — salient, not proof">.
 
-Strongest critiques (where they converged): <ranked, the high-signal ones>.
-Best improvements, ranked by outcome value:
-  1. <improvement> — value: <why it matters / compounds> · cost: <rough, a footnote> · <held up under cross-examination / reworked after Round 2 to ___>.
-  2. …
-Cut by cross-examination: <Round-1 idea that didn't survive Round 2, + the hole that killed it — or "none; all held">.
-Weaknesses now solved (Round 2): <weakness → the fix that folds into the recommendation>.
-The real fork (if any): <A vs B — the honest tension, not smoothed; include any honest Round-2 divergence>.
-The unexpected angle worth keeping: <the non-obvious one that survived attack, or "none landed">.
-The question you didn't ask: <highest-value unasked question — a prior decision, a symptom check, an assumption baked into the ask; flag if multiple agents hit it independently; or "none — well-scoped">.
-
+<IF a load-bearing unasked-question landed, it goes HERE, above the call: "Before acting on any of this, the real question is ___.">
 Recommendation: <one integrated path, (recommended), stated first>. Because <brief reason>.
+
+— optional depth (skip if you just want the call) —
+Strongest critiques (where blind reads clustered): <ranked>.
+Best improvements, ranked by outcome value:
+  1. <improvement> — value: <why it matters / compounds> · cost: <rough, a footnote> · <held up under scrutiny / reworked to ___>.
+  2. …
+Ideas that didn't survive scrutiny: <a proposal that got holed + the hole that killed it — or "none; all held">.
+Weaknesses now solved: <weakness → the fix that folds into the recommendation>.
+The real fork (if any): <A vs B — the honest tension, not smoothed>.
+The unexpected angle worth keeping: <the non-obvious one that survived attack, or "none landed">.
+The gauntlet (REQUIRED when the verdict is "keep it as-is"): <the real candidates tried against it + exactly why each lost — no gauntlet = a rubber-stamp, not a verdict>.
+The question you didn't ask (if not already placed above): <the unasked question, or "none — well-scoped">.
 ```
-DROP the "Cut by cross-examination" + "Weaknesses now solved" lines on a gut-check (no Round 2).
+DROP the "Ideas that didn't survive scrutiny" + "Weaknesses now solved" lines on a gut-check (no Round 2).
 CLOSE by naming what the artifact got RIGHT — fresh eyes that only tear down leave no floor to build on.
+<!-- SYNC: the AXIS-DISCLOSURE line + the recommendation-first OUTPUT skeleton are shared doctrine — mirror any change in references/single-mind.md -->
+AXIS-DISCLOSURE + SIBLING HANDOFF (family convention): if the artifact has multiple quality axes, name the ONE you judged, name the sibling axes you did NOT, and offer them — e.g. "I pressure-tested your thinking/decision here; your visual design, ask-placement, and attention/retention are separate passes I did NOT run — want me to take any of those on?". And distinguish this from any verification/audit macro the user has — the word "audit" collides: fresh-eyes re-examines the thinking (open verdict — keep / strengthen / rethink); it does NOT verify that X is correct or ready to ship.
 
 ## THE BAR
-PASS = the user holds a measurably STRONGER artifact + a CLEAR call. Not a transcript of opinions. Not a committee average.
+PASS = the user holds a CLEARER, better-founded CALL on the artifact — a stronger version, a rethink, or a WELL-EARNED "keep it as-is" — reached impartially. Not a transcript of opinions. Not a committee average. (A keep-it verdict passes only when it beat real, steelmanned alternatives — see the gauntlet.)
 SIGNALS you did it right: >= 1 unexpected angle they didn't ask for · the unasked question surfaced OR honestly cleared · a recommendation actionable without reading a single agent's raw output.
 FAIL IF every agent came back agreeing with the original -> ask WHY FIRST: the brief leaked your intent (you let them grade your homework) / you didn't push the improvise stage / the alternatives were strawmen too weak to ever win = FALSE PASS -> rerun.
 LEGIT if improvise genuinely ran (steelmanned alternatives generated + weighed) and the original still won on the merits -> report "keep it" plainly + show what was tried against it.
