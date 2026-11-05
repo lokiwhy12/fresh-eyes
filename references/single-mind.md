@@ -1,10 +1,10 @@
 # Fresh Eyes — SINGLE-MIND method (one context, no subagents)
 
-> **Independence tier:** if this environment has a routing or offload skill, it
-> names an outside reviewer — give one seat to that and you reach the top tier
-> (see the router's independence section). If it does not, run this as written
-> and **say in the result that every reviewer shared one model's priors**, so
-> their agreement is weaker evidence than it looks.
+> **Independence tier:** this method is tier 2 — one mind running disciplined
+> stances, not separate reviewers. **Say so in the result**, so the owner weighs it
+> accordingly. If the user asked for FULL fresh eyes and you landed here, say
+> plainly that the cross-provider panel needs an environment that can spawn
+> independent agents and reach other providers' frontier models — then run this method.
 
 > You were routed here because this environment has **no way to dispatch
 > independent parallel reviewers** (a single chat context). One mind runs the

@@ -4,16 +4,16 @@ description: >-
   Fresh eyes — criticize, improvise, synthesize. Pressure-test AND improve any
   artifact (plan, spec, design, strategy, copy, decision, architecture, code):
   return ONE value-ranked recommendation plus the question the user should have
-  asked but didn't. An independent RE-EXAMINATION that attacks the thing AND rebuilds it
-  from a blank slate, landing on an open verdict — keep it, strengthen it, or
-  rethink it. Generating real alternatives is MANDATORY, not the goal. It rethinks the THINKING; it
-  does NOT verify correctness ("is this right / done / ready to
-  ship?" → a separate verification pass). Fires on:
-  "fresh eyes", "criticize improvise synthesize", "fresh / outside perspective on
-  X", "pressure-test this", "stress-test this", "red-team this", "poke holes and
-  make it better", "get independent eyes on X", "what am I missing", "what would
-  someone else say". Lean toward firing whenever the user wants outside
-  perspective or an impartial re-examination of a piece of thinking.
+  asked but didn't. An independent RE-EXAMINATION that attacks AND rebuilds the
+  thing, landing on an open verdict — keep, strengthen, or rethink. Real
+  alternatives are MANDATORY. It rethinks the THINKING; it does NOT verify
+  correctness ("is this right / done / ready to ship?" → a verification pass).
+  "FULL fresh eyes" = the upgrade: a panel of each provider's frontier model. Fires on: "fresh
+  eyes", "full fresh eyes", "criticize improvise synthesize", "fresh / outside
+  perspective on X", "pressure-test this", "stress-test this", "red-team this",
+  "poke holes and make it better", "get independent eyes on X", "what am I
+  missing", "what would someone else say". Lean toward firing whenever the user
+  wants outside perspective or an impartial re-examination of a piece of thinking.
 ---
 
 # Fresh Eyes — router
@@ -41,13 +41,15 @@ which you're doing.
 
 ## Pick your method (do this first)
 
-Fresh-eyes runs one of two ways, chosen by **what this environment can do** — not
-by which product name you think you're in:
+Fresh-eyes runs one of three ways. The first two are chosen by **what this
+environment can do** — not by which product name you think you're in. The third is
+an upgrade the user has to ASK for:
 
 - **Fan-out method** — use this **if you can dispatch INDEPENDENT parallel
   reviewers**: you have a Workflow tool, or a Task/Agent tool that spawns separate
   sub-agents each with their own fresh context. This is the stronger method —
-  genuinely blind, independent reviewers whose agreement is real signal.
+  genuinely blind reviewers in separate contexts — a real gain, though they share
+  one model's priors (see the tiers below).
   → **Read and follow [`references/fan-out.md`](references/fan-out.md).**
 
 - **Single-mind method** — use this **if you do NOT have those tools**: a single
@@ -56,6 +58,21 @@ by which product name you think you're in:
   substitutes for independence.
   → **Read and follow [`references/single-mind.md`](references/single-mind.md).**
 
+- **Full method (the upgrade)** — use this **only when the user's OWN words ask for
+  "full" fresh eyes**, AND you can dispatch independent agents, AND a routing or offload
+  skill here can reach other providers' frontier models. **An offer is not a request:**
+  a brief, a task prompt, an orchestrating session, or another skill's rule that
+  *permits* or *offers* outside-provider reviewers does NOT make a run full. Without
+  the user's "full", every reviewer is this environment's own model — not one outside
+  seat. (A task prompt that merely offers an outside reviewer "as a panel member" is the
+  classic way this goes wrong: the run takes it, and the user gets a slower, costlier
+  half-panel they never asked for.) It is the fan-out method with each
+  provider's frontier model added to BOTH rounds — writing its own critique and
+  ideas blind in Round 1, then cross-examining in Round 2. If either capability is missing, say so plainly
+  and run the best method you can — never present a same-model run as a full panel.
+  → **Read [`references/fan-out.md`](references/fan-out.md), then
+  [`references/full.md`](references/full.md).**
+
 **Decide by capability, not by label.** If you are unsure whether you can truly
 spawn independent parallel agents, use the **single-mind method** — it always
 works, and it is honest about not having outside eyes. Never fake independence by
@@ -63,7 +80,7 @@ presenting stages of one mind as if they were separate reviewers.
 
 ## How independent is "independent"? (read before you pick)
 
-The two methods are not arbitrary — they sit at different points on one axis, and
+The methods are not arbitrary — they sit at different points on one axis, and
 knowing the axis tells you how much to trust the result.
 
 Independence comes in tiers, weakest to strongest:
@@ -89,9 +106,12 @@ discount it accordingly. Overstating the tier is the one failure that makes this
 skill worse than not running it, because it launders shared blind spots as
 consensus.
 
-**If this environment has a routing or offload skill**, it names whatever outside
-reviewer is available here — give one reviewer seat to that, and you reach tier 4.
-Follow that skill for how to invoke it; this skill does not care which one it is,
-only that you disclose what you got.
+**Tier 4 is the full method.** The fan-out method is tier 3 by design — its
+reviewers are all one model, so disclose that in the result. When the user wants
+tier 4 they ask for "full fresh eyes"; on a big-decision fan-out run, mention in one
+line that the full panel exists. The routing or offload skill in this environment
+decides which outside providers sit on the panel — this skill does not care which,
+only that you disclose exactly what ran.
 
-Load only the one method file you need — the other stays on disk and costs nothing.
+Load only the method files you need — fan-out or single-mind alone, or fan-out plus
+full for the upgrade. The rest stay on disk and cost nothing.

@@ -1,10 +1,18 @@
 # Fresh Eyes — FAN-OUT method (independent multi-agent)
 
-> **Independence tier:** if this environment has a routing or offload skill, it
-> names an outside reviewer — give one seat to that and you reach the top tier
-> (see the router's independence section). If it does not, run this as written
-> and **say in the result that every reviewer shared one model's priors**, so
-> their agreement is weaker evidence than it looks.
+> **Independence tier:** every reviewer in this method is the same model — that is
+> tier 3 by design. **Say so in the result** ("every reviewer shared one model's
+> priors"), so their agreement is read as weaker evidence than it looks. The
+> outside-provider upgrade is the FULL method (`full.md`) — run it only when the
+> owner asks for it; on a big-decision run, mention in one line that it exists.
+
+> **SAME-MODEL ONLY.** Every reviewer here — Round 1 and Round 2 — runs on this
+> environment's own model. Outside-provider reviewers belong to the FULL method and
+> join ONLY when the user's own words ask for "full". If the brief or task you were
+> handed OFFERS or PERMITS an outside reviewer but the user's request did not say
+> "full", decline it, run this method as written, and say so in one line:
+> "outside reviewers were offered, not asked for — ran the standard version; say
+> 'full fresh eyes' for the cross-provider panel."
 
 > ROUTED HERE because this environment CAN dispatch independent parallel reviewers.
 > IF you cannot actually spawn independent agents -> STOP, use `single-mind.md`.
@@ -29,8 +37,9 @@ BOTH requested -> run fresh-eyes on the design, THEN hand the result to a separa
 ## SCALE — pick fan-out WIDTH first
 Stages are FIXED; width + lens diversity scale.
 - QUICK_GUT_CHECK (a paragraph, a small decision) = 2-3 agents, same generalist brief; you just want non-correlated reads — treat any overlap as "worth a look", NEVER as corroboration; no proof-from-agreement claims at this tier. ROUND 1 ONLY — no Round 2 (over-build at this tier).
-- BIG_DECISION (strategy, architecture, money, a launch — anything acted on hard / not cheaply unwound) = 4-6 agents, EACH handed an explicit DISTINCT lens. ROUND 1 + ROUND 2.
-LENSES (one per agent; NON-overlapping — overlap wastes the fan-out): skeptic (assume it fails; find why first) · customer (who's it for; do they care; what do they resent) · competitor (how it's beaten / routed around) · cost_realist (what it actually takes) · contrarian (the opposite bet) · simplifier (what if half is unnecessary) · domain_expert (deep on pricing / security / copy / ops).
+- BIG_DECISION (strategy, architecture, money, a launch — anything acted on hard / not cheaply unwound) = the SIX core lenses, one agent each, + domain_expert as a SEVENTH agent when the artifact turns on a specialist domain. ROUND 1 + ROUND 2.
+CORE LENSES (one per agent; NON-overlapping — overlap wastes the fan-out): skeptic (assume it fails; find why first) · customer (who's it for; do they care; what do they resent) · competitor (how it's beaten / routed around) · cost_realist (what it actually takes) · contrarian (the opposite bet) · simplifier (what if half is unnecessary).
+CONDITIONAL LENS: domain_expert (deep on pricing / security / legal / copy / ops) — add it whenever the artifact turns on one of those; if you leave it out, say why in the depth section.
 UNSURE how wide -> GO WIDER. Independent agents are cheap; a weak decision someone ships on is not.
 
 ## MECHANISM
@@ -40,13 +49,14 @@ MODEL_BAND (a band, not an open ceiling):
 - CEILING: the fan-out is N parallel passes — the one place cost multiplies. Pin reviewers explicitly; do NOT let them inherit a lighter model, and do NOT put all N on the priciest tier unless the user asked this run. Prefer ONE pass on the priciest tier over N.
 BLINDNESS: each agent blind to the others AND to your intent. No shared scratchpad, no seeing each other's output. Overlap that survives independent eyes = signal; groupthink you engineered = noise.
 PIPELINE: Round 1 (independent) -> Round 2 (cross-exam, BIG only) -> Synthesis (consumes BOTH rounds). Gut-check = Round 1 -> Synthesis.
+SEAL TIMING: write SEALED_READ (see SYNTHESIZE) the moment Round 1 is dispatched — BEFORE you open a single Round-1 return. Numbering items and checking coverage both mean reading the stacks; a seal written after that is written to match.
 ROUND 2 IS ADDITIVE, never a replacement: Round 1 stays fully independent + blind (that signal is the core asset). Round 2 stresses the NEW ideas; it never re-runs, edits, or overwrites them.
 
 ## THE BRIEF — hand each agent this and ONLY this
 
 **FIRST, seal your own leaning (debias step — do this BEFORE you write the goal).** In one line, name the option you're hoping survives / the answer you're afraid of. Your leaning does not leak through the artifact — it leaks through (1) how you word the goal and (2) which lenses you pick. Naming it up front is what lets you catch both channels. Keep it sealed; reveal it only at synthesis (SEAL FIRST, below, already requires this).
 
-1. THE ARTIFACT, verbatim — the actual plan / spec / copy / decision, in full. Paste it or point at the exact file. NOT your summary of it.
+1. THE ARTIFACT, verbatim — the actual plan / spec / copy / decision, in full. Paste it or point at the exact file (in a FULL run: paste only — `full.md` DATA RULE). NOT your summary of it.
 2. THE GOAL, 1-2 plain lines = the target OUTCOME, not the implementation ("win back churned users", not "improve this email's subject line"). SOLUTION-FREE: it must name NO favored fix and imply no answer — if your goal line hints at the option you want, or reads as "should we do X?", it is leaking; rewrite it outcome-only. The success criterion they grade against. No goal -> they critique in a vacuum. Your intent -> they just ratify. GIVE the goal, WITHHOLD the intent.
 3. THE OUTPUT CONTRACT (below) — load-bearing; without it agents default to a list of nitpicks and skip the improvement, the half that matters most.
 4. (BIG only) their assigned LENS — and at the big-decision tier hand out the FULL non-overlapping roster, do NOT hand-pick a subset. Cherry-picking lenses (running only cost_realist, say) is itself a debias leak: it quietly buries the options you'd rather not have examined. The whole roster, not the ones that suit your leaning.
@@ -80,62 +90,85 @@ SHAPE: `weaknesses[] · better-alternatives[] · different-approaches[] · unexp
 EMPTY SECTION = FAILED RETURN — except unasked-question, where an honest "well-scoped, nothing upstream" is valid, not a miss.
 Agents do NOT rank across each other — that is YOUR job.
 KEEP each Round-1 stack INTACT + LABELED (Stack A = skeptic, Stack B = customer, …). Round 2 + synthesis reference them by label. Originals are NEVER edited.
-LEAK TRIPWIRE (check every return): if an agent quotes your intent back, names the option you favored, or grades against your preferred fix instead of the GOAL, the brief LEAKED — flag the run DEGRADED and re-dispatch that agent (or the round) with a clean brief. An agent that absorbed your leaning is not an independent read; counting it as one is the exact failure the blind fan-out exists to prevent.
+LEAK TRIPWIRE (check every return): if an agent quotes your intent back, names the option you favored, or grades against your preferred fix instead of the GOAL — using knowledge the brief did NOT contain — the brief LEAKED. (If the ARTIFACT itself states a preferred option, an agent naming it is reading, not a leak.) — flag the run DEGRADED and re-dispatch that agent (or the round) with a clean brief. An agent that absorbed your leaning is not an independent read; counting it as one is the exact failure the blind fan-out exists to prevent.
 
 ## ROUND 2 — CROSS-EXAMINATION  (BIG_DECISION TIER ONLY)
-STAKES_GATE: fires ONLY on the big-decision tier — a launch, an architecture, a money call, a strategy. A quick gut-check does NOT get a Round 2. UNSURE which tier -> you're in gut-check -> skip Round 2, go straight to synthesis.
+STAKES_GATE: fires on the big-decision tier — a launch, an architecture, a money call, a strategy. A clear quick gut-check does NOT get a Round 2. UNSURE which tier -> treat it as BIG and run Round 2: it is one agent, and skipping it lets untested ideas ride straight into the call.
 THE GAP IT CLOSES: Round 1's IMPROVISE outputs are the NEWEST + RISKIEST material precisely because they're novel — nobody pressure-tested them. Every Round-1 attack hit the ORIGINAL; the PROPOSALS were never attacked at all. Round-1-only -> they ride into synthesis COMPLETELY UNVETTED. Round 2 puts the new ideas through the same adversarial wringer + turns the surfaced criticisms into concrete fixes.
 
-### HOW IT RUNS ON TOP OF ROUND 1
-ROUND 1 IS FROZEN — you never edit those stacks. Round 2 produces a SEPARATE annotation layer alongside each, never a rewrite.
-PAIRING/ROTATION: one peer agent per Round-1 stack. Hand peer *i* a DIFFERENT agent's stack — ideally from a different LENS, so the cross-talk crosses perspectives rather than echoing one. Simple rotation: peer for Stack A gets B, B gets C, … last wraps to A. Dispatch ALL peers in PARALLEL, each blind to the other peers.
-EACH PEER RECEIVES — and ONLY this:
-1. THE ORIGINAL ARTIFACT, verbatim + THE GOAL (the same two anchors Round 1 got). The peer grades against the OUTCOME, not against the stack.
-2. EXACTLY ONE Round-1 stack. Not all of them — seeing every stack lets the peer AVERAGE across them, which is synthesis (your job), not cross-examination.
-3. The Round-2 contract + the anti-anchoring guard (below).
-STILL WITHHELD: your intent · the conversation history · what you're leaning toward · the OTHER peers' work.
+### WHO RUNS IT — ONE cross-examiner over ALL the stacks
+ROUND 1 IS FROZEN — you never edit those stacks. Round 2 is a SEPARATE layer keyed to them, never a rewrite.
+ONE fresh agent (same model band as Round 1) cross-examines EVERY stack, item by item. NOT one peer per stack: several copies of one model attacking several stacks is division of labor, not independent reads — headcount buys almost no independence here and every copy costs a full top-tier pass. One examiner covers the same ground AND sees what per-stack peers never could: where two stacks COLLIDE.
+WANT REAL INDEPENDENCE? That is the FULL method (`full.md`): outside-provider models write their own stacks in Round 1, and this same seat sits on a panel with them in Round 2. Base Round 2 is same-model by design — disclose it.
+NUMBER EVERY ITEM before dispatch, so coverage is checkable: within each stack, label every improvement — better-alternatives, different-approaches AND unexpected-angles all go in the `imp` sequence — and every weakness (A-imp-1, A-imp-2 … A-weak-1 …). (Seal first — see SEAL TIMING.)
+THE EXAMINER RECEIVES — and ONLY this:
+1. THE ORIGINAL ARTIFACT, verbatim + THE GOAL (the same two anchors Round 1 got). It grades against the OUTCOME, not against any stack.
+2. ALL the Round-1 stacks, intact, labeled, items numbered.
+3. The Round-2 contract + the no-verdict rule + the anti-anchoring guard (below), verbatim.
+STILL WITHHELD: your intent · the conversation history · what you're leaning toward · your sealed read.
 
-### ROUND-2 CONTRACT — two moves, BOTH mandatory
+### ROUND-2 CONTRACT — go RESULT BY RESULT; both moves on EVERY stack, by label
 MOVE_A — CRITIC_ATTACKS_THE_IMPROVEMENTS (the must-have; the actual gap):
-DO: take the stack's IMPROVISE outputs (every better-alternative, different-approach, unexpected-angle) and attack them the way Round 1 attacked the original. Per proposal worth engaging: what does it quietly assume · where does it break · what does it cost that the proposer waved off · what NEW failure mode does it introduce · who does it lose.
-RULE: treat every proposal as a claim to be DISPROVED, not admired. Accept none on the proposer's say-so. HARDEST look = the unexpected_angle (most novel, least examined).
-IF only one move runs -> RUN A.
+DO: for EVERY improvement in EVERY stack (each better-alternative, different-approach, unexpected-angle), attack it the way Round 1 attacked the original: what does it quietly assume · where does it break · what does it cost that the proposer waved off · what NEW failure mode does it introduce · who does it lose.
+RULE: treat every proposal as a claim to be DISPROVED, not admired. Accept none on the proposer's say-so. HARDEST look = each unexpected_angle (most novel, least examined). A proposal that genuinely holds still gets an entry: "survives — tried <X, Y>". Never manufacture a hole to look thorough.
+IF you must cut, cut Move B — never Move A.
 MOVE_B — IMPROVER_ANSWERS_THE_CRITICISMS (the valuable bonus):
-DO: take the stack's CRITICIZE outputs and turn EACH into a concrete solution / mitigation / genuine alternative — the design change, the guardrail, the different path that makes the weakness stop biting — OR a clear statement that it's unsolvable and must be lived with.
+DO: for EVERY weakness in EVERY stack, give a concrete solution / mitigation / genuine alternative — the design change, the guardrail, the different path that makes it stop biting — OR a clear statement that it's unsolvable and must be lived with.
 RULE: "yes, that's a risk" != a fix (Round 1 already said that).
+COLLISIONS (only an all-stacks examiner can produce these): where one stack's proposal breaks another's, or one stack's weakness kills another stack's proposal — by label ("A-imp-2 reintroduces the failure B-weak-1 names"). None found -> say "no collisions".
 
-ANTI-ANCHORING GUARD — print in the peer's prompt VERBATIM:
+NO-VERDICT RULE — print in the examiner's prompt VERBATIM (this is what stops one all-seeing examiner from becoming a second synthesizer):
 
-> You are cross-examining another analyst's stack, not joining their team. Attack
+> You are a cross-examiner, not a judge. Go stack by stack, item by item. Attack
+> every proposal, answer every criticism, and flag collisions — each by its label.
+> REQUIRED, and NOT verdicts: how hard each hole bites (judged on its own); for
+> each weakness, a concrete fix OR an honest "live with it, because…"; pointing
+> out where two items CONFLICT; and where your own read of the artifact differs —
+> or "converged honestly" if it doesn't. Never invent a fix or a disagreement to
+> fill a line. FORBIDDEN: ranking stacks or proposals against each other, picking
+> winners, blending ideas together, recommending an overall course of action, or
+> summarizing "the best ideas." Choosing happens later, by someone else; doing it
+> here contaminates the result. If you catch yourself writing "overall", "the
+> winner", or "I'd go with", stop and delete it.
+
+ANTI-ANCHORING GUARD — print in the examiner's prompt VERBATIM:
+
+> You are cross-examining other analysts' stacks, not joining any of them. Attack
 > their proposals and solve their criticisms **from your own independent read of
 > the artifact** — keep your own judgment intact. Do **NOT** adopt their framing,
-> defer to their conclusions, soften your take to agree, or let their stack become
-> the new anchor you converge on. The failure mode here is groupthink: two minds
-> collapsing into one view, which destroys the different-approaches and unexpected
+> defer to their conclusions, soften your take to agree, or let any stack become
+> the new anchor you converge on. The failure mode here is groupthink: minds
+> collapsing into one view, which destroys the different approaches and unexpected
 > angles this exercise exists to produce. If, after honestly cross-examining, you
 > still see the artifact differently, **say so** — your divergence is signal. I
 > want friction, not consensus.
 
-PEER RETURNS (a cross-annotation layer, kept SEPARATE from the stack):
-`attacks-on-their-improvements[]` (which proposal · the hole · how hard it bites) · `solutions-to-their-criticisms[]` (which weakness · the concrete fix, or "live with it, because…") · `where-I-still-diverge` (1 line, or "converged honestly").
-ENFORCE both moves. Only-attacks OR only-solves = half of Round 2 -> loop it back. Trimmed under pressure -> KEEP MOVE_A.
-AFTER ROUND 2 you hold TWO layers, both intact + labeled: the N frozen Round-1 stacks + the N Round-2 cross-annotations. Round 2 NEVER overwrites Round 1 — if a peer's attack is wrong, the original proposal still stands on its Round-1 merits; synthesis weighs both. NOTHING is merged yet — that's synthesis.
+EXAMINER RETURNS (a separate layer keyed by label, never merged into the stacks):
+`per-stack[]` = { stack · `attacks[]` (item label · the hole · how hard it bites — OR "survives — tried X, Y") · `solutions[]` (item label · the concrete fix — OR "live with it, because…") } · `collisions[]` · `where-I-diverge` (1 line, or "converged honestly").
+COVERAGE CHECK (yours, before synthesis): every numbered improvement and weakness has an entry. Missing items -> they go into the ONE RE-ASK (below). Still missing after it -> mark those items NOT CROSS-EXAMINED: they can never lead the recommendation or count as "survived", and the depth section names them.
+THINNING means entries that name no concrete mechanism (no assumption, breakpoint, cost, or fix) — NOT short entries. "survives — tried <X, Y>" is a full entry when X and Y are concrete. SCALE ESCAPE: if a pass thins, split the stacks across TWO examiners, each with the FULL brief and told which stacks are theirs, PLUS one collision-only pass over ALL stacks — a split must never hide a cross-half collision. Never back to one-per-stack.
+VERDICT LEAK: a separable ranking / winner-pick / overall recommendation -> discard that part unread. Woven through the item entries (no clean part to cut) -> it goes into the ONE RE-ASK with the no-verdict rule restated. Still woven after it -> exclude that return and dispatch ONE fresh examiner; if that also fails, every item is NOT CROSS-EXAMINED and you say plainly that Round 2 failed.
+ONE RE-ASK PER EXAMINER — missing labels, a missing move, and a woven verdict all ride in a single re-ask (the FULL brief again, all stacks — a partial packet cannot see collisions — told exactly what to supply). No loops. After it: improvements still lacking a Move-A entry are NOT CROSS-EXAMINED; weaknesses still lacking a Move-B entry are UNTESTED, not unsolvable (see synthesis).
+REPLACEMENT: only an EXCLUDED examiner is replaced — at most ONE replacement, which gets its own first dispatch and its own one re-ask. If the replacement also ends excluded or empty, ROUND 2 FAILED: every item is NOT CROSS-EXAMINED, and the run still closes (see THE BAR).
+AFTER ROUND 2 you hold TWO layers: the frozen Round-1 stacks + ONE cross-examination layer keyed to them. Round 2 NEVER overwrites Round 1 — if the examiner's attack is wrong, the original proposal still stands on its Round-1 merits; synthesis weighs both. NOTHING is merged yet — that's synthesis.
 
 ## SYNTHESIZE — one integrated result, not an average (YOUR job, not theirs)
 RULE: don't average — TAKE THE BEST. Averaging independent views back to the bland middle throws away the exact edge you paid for. Integrate, don't tally.
 
 SEAL FIRST — you are the ONLY un-blind link:
-DO: BEFORE reading a single stack, write SEALED_READ = 2-3 lines = the recommendation you currently believe.
+DO: BEFORE opening a single Round-1 return (see SEAL TIMING — that includes numbering them for Round 2), write SEALED_READ = 2-3 lines = the recommendation you currently believe.
 THEN read everything. THEN state plainly whether/how the stacks MOVED you — what you changed your mind about / what survived / what you dropped.
 IF nothing moved you -> say so AND show the independent reads genuinely agreed (not that you skimmed past them).
 WHY: your prior is exactly the bias the blind fan-out existed to remove, and it leaks straight back in here at the last step. Declare the bias; do NOT amputate the context (you need the owner's context to rank by value).
 
 CONSUME BOTH LAYERS (when Round 2 ran):
-- Round-1 improvement HOLED badly by its peer -> drops in rank or out. Novel != survived. Don't promote it for being exciting in Round 1.
+- Round-1 improvement HOLED badly by the cross-examiner -> drops in rank or out. Novel != survived. Don't promote it for being exciting in Round 1.
 - Round-1 improvement that SURVIVED cross-exam -> your highest-confidence material (novel AND battle-tested). LEAD with these.
-- Round-1 weakness SOLVED by a peer -> stops being a blocker; becomes a design step. Fold the fix in.
-- Round-1 weakness NOBODY could solve -> a REAL CONSTRAINT. Name it as a cost or a fork. Don't bury it.
-- Peer who HONESTLY DIVERGED (kept their own read) -> high-signal disagreement. A fork to surface, not to smooth.
+- Round-1 weakness SOLVED by the cross-examiner -> stops being a blocker; becomes a design step. Fold the fix in.
+- Round-1 weakness the examiner genuinely tried and marked "live with it, because…" -> a REAL CONSTRAINT. Name it as a cost or a fork. Don't bury it.
+- Round-1 weakness with NO Round-2 entry (Move B trimmed, or item not cross-examined) -> UNTESTED. Say so plainly; never present it as a constraint the owner must live with.
+- Cross-examiner who HONESTLY DIVERGED (kept its own read) -> high-signal disagreement. A fork to surface, not to smooth.
+- COLLISION flagged (two ideas that can't both ship as written) -> resolve it, or name it as a fork. Never recommend both halves of a collision.
 (No Round 2 / gut-check -> synthesize the Round-1 stacks alone, same steps.)
 
 1. CLUSTER: where did independents CONVERGE vs genuinely DIVERGE (a real fork to surface, not paper over)? Did Round 2 CONFIRM a cluster or CRACK it? READ CONVERGENCE HONESTLY: the agents are the SAME model, so they share blind spots — agreement means a point is SALIENT and survived reframing, NOT that it is proven correct. Weight it by LENS-DISTANCE: a skeptic and a customer landing on the same point is real signal; two similar lenses agreeing is near-noise; a lone sharp dissent can outrank a same-lens chorus. Never sell "they agreed" to the owner as proof.
@@ -151,7 +184,7 @@ WHY: a better answer to the wrong question is worth less than the right question
 "KEEP THE ORIGINAL" — legitimate, and the verdict to DISTRUST MOST:
 Improvise FORCES every agent to generate ideas -> that guarantees volume, not merit. If nothing beats the original on durable value, "keep it as-is" is the RIGHT call — say so plainly and show what was tried against it. Never promote a manufactured improvement just because the pipeline produced many.
 LEGAL ONLY IF: candidates were STEELMANNED (no sandbagging) AND beaten ON THE MERITS AND the GAUNTLET IS SHOWN (the real candidates + exactly why each lost). The gauntlet is a REQUIRED output line on any "keep it" verdict (see OUTPUT), not optional prose — no gauntlet shown = a rubber-stamp, not a result.
-MAX_SUSPICION: SEALED_READ == "keep it" AND verdict == "keep it" -> treat that agreement as the single most likely place the un-blind synthesizer rubber-stamped its own prior. The bar goes UP, not down: produce the strongest steelmanned challenger you can and show it STILL lost, or change the verdict.
+MAX_SUSPICION: your SEALED_READ leaned toward keeping the original AND the verdict keeps it ("keep it", "keep as-is", "leave it alone" — any wording; judge the meaning, not the string) -> treat that agreement as the single most likely place the un-blind synthesizer rubber-stamped its own prior. The bar goes UP, not down: produce the strongest steelmanned challenger you can and show it STILL lost, or change the verdict.
 CALIBRATION: a tool that can only ever return "here's something better" is one you learn to ignore; letting it honestly decline is what makes its pushes mean something — don't spend that credibility on a polite revert.
 
 ## OUTPUT  (recommendation FIRST — the call before the machinery; plain English, emit this shape)
@@ -174,7 +207,7 @@ The unexpected angle worth keeping: <the non-obvious one that survived attack, o
 The gauntlet (REQUIRED when the verdict is "keep it as-is"): <the real candidates tried against it + exactly why each lost — no gauntlet = a rubber-stamp, not a verdict>.
 The question you didn't ask (if not already placed above): <the unasked question, or "none — well-scoped">.
 ```
-DROP the "Ideas that didn't survive scrutiny" + "Weaknesses now solved" lines on a gut-check (no Round 2).
+GUT-CHECK OUTPUT (no Round 2 ran): DROP the "Ideas that didn't survive scrutiny" + "Weaknesses now solved" lines, AND reword what's left so nothing claims a test that never happened — confidence tag "from <N> quick reads — overlap is worth a look, not corroboration"; each improvement tagged "untested at this tier" (never "held up under scrutiny"); the unexpected-angle line reads "the non-obvious one worth a look (untested)".
 CLOSE by naming what the artifact got RIGHT — fresh eyes that only tear down leave no floor to build on.
 <!-- SYNC: the AXIS-DISCLOSURE line + the recommendation-first OUTPUT skeleton are shared doctrine — mirror any change in references/single-mind.md -->
 AXIS-DISCLOSURE + SIBLING HANDOFF (family convention): if the artifact has multiple quality axes, name the ONE you judged, name the sibling axes you did NOT, and offer them — e.g. "I pressure-tested your thinking/decision here; your visual design, ask-placement, and attention/retention are separate passes I did NOT run — want me to take any of those on?". And distinguish this from any verification/audit macro the user has — the word "audit" collides: fresh-eyes re-examines the thinking (open verdict — keep / strengthen / rethink); it does NOT verify that X is correct or ready to ship.
@@ -187,5 +220,6 @@ LEGIT if improvise genuinely ran (steelmanned alternatives generated + weighed) 
 FAIL IF all you produced is reasons the current version is flawed -> you ran half the skill.
 BIG_DECISION extra bars:
 - The NEW ideas were themselves attacked. A Round-1 improvement reaching the recommendation un-pressure-tested = you skipped Round 2 = the exact failure this layer exists to prevent.
-- NO quiet convergence: every cross-examiner suddenly agreeing with the stack it was handed = groupthink, not validation -> rerun with the anti-anchoring guard turned up.
+- NO quiet convergence: a cross-examination where every proposal "survives" and nothing collides is SUSPECT -> rerun it ONCE with the anti-anchoring guard turned up. If the rerun is also clean AND its "survives" entries name concrete attempts, accept it and say so ("two cross-examinations found no holes"). Never invent a hole to clear this bar.
+- COVERAGE: every numbered Round-1 item has a Round-2 entry OR is explicitly marked NOT CROSS-EXAMINED / UNTESTED and named in the depth section. An item in neither state rode in unvetted. None of the marked items leads the recommendation — EXCEPT when Round 2 failed outright: then still give the call, labeled "UNTESTED — Round 2 failed; nothing here was cross-examined", and offer a rerun. A run must always close.
 - Independence (R1) AND scrutiny-of-the-new (R2) are BOTH required; the synthesizer must SHOW it weighed both.
