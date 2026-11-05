@@ -97,44 +97,46 @@
       <p class="muted" style="margin:0">When a session can’t spawn separate helpers (a plain chat, for example), <strong>one mind</strong> runs the same critique, improve, synthesize discipline in sequence: it commits a guess up front, then hunts it down and argues against itself. Honest about not having true outside eyes.</p>
     </div>
   </div>
-  <p class="muted" style="margin-top:14px;font-size:14px">Why two? The powerful method needs tools that only Claude Code has. Rather than make you keep two skills straight, this one adapts, loading only the method it’s actually using, so neither side carries the other’s weight.</p>
+  <p class="muted" style="margin-top:14px;font-size:14px">Why two? Separate reviewers need a session that can start helper agents. Claude Code can; a plain chat can’t. Rather than make you keep two skills straight, this one adapts, loading only the method it’s actually using, so neither side carries the other’s weight.</p>
 
   <div class="callout" style="margin-top:16px">
     <strong>Optional upgrade: “full fresh eyes.”</strong> Say the word <em>full</em> and, if your setup can reach other AI companies’ models, it adds the strongest model from each of them. They write their own ideas blind, then cross-examine everyone else’s. Different companies’ models have different blind spots, so when they agree, it means a lot more. It needs a separate skill that knows how to call those models; without one it says so and runs the standard version. It never goes “full” unless <em>you</em> ask.
   </div>
 
   <h2>How to use it</h2>
-  <p>No commands. Just ask in plain words and hand it the thing to look at:</p>
+  <p>In Claude Code, type <code>/fresh-eyes</code>, paste your work, and add one line on what you’re trying to achieve, or, mid-session, just say <strong>“use fresh eyes on this.”</strong> In the Claude app, ask in plain words and hand it the thing to look at:</p>
   <div class="chips">
-    <span class="chip">“fresh eyes on this”</span>
+    <span class="chip">/fresh-eyes (Claude Code)</span>
+    <span class="chip">“use fresh eyes on this”</span>
     <span class="chip">“pressure-test this plan”</span>
     <span class="chip">“poke holes and make it better”</span>
     <span class="chip">“what am I missing?”</span>
     <span class="chip">“what would someone else say?”</span>
     <span class="chip">“full fresh eyes on this” (upgrade)</span>
   </div>
+  <p class="muted" style="margin-top:14px">It’s working if the reply starts with <strong>FRESH EYES</strong>. For a first try, pick something short and low-stakes: an email, a bio, a one-paragraph idea. It sizes the review to the stakes.</p>
   <div class="callout" style="margin-top:16px">
-    <strong>What it’s not for:</strong> “Is this correct / done / ready to ship?” That’s a <em>verification</em> pass, a different job. Fresh Eyes makes your thinking <em>better</em>; it doesn’t sign off that it’s <em>right</em>.
+    <strong>What it’s not for:</strong> “Is this correct / done / ready to ship?” Use your tests or a code review for that. Fresh Eyes makes your thinking <em>better</em>; it doesn’t sign off that it’s <em>right</em>.
   </div>
 
   <h2>Installing it</h2>
-  <p class="muted" style="margin-bottom:16px">Install it wherever you want to use it. A skill uploaded to your claude.ai account can also show up in Claude Code on the same account (as <code>anthropic-skills:fresh-eyes</code>); if it does, you don’t need the folder copy too.</p>
+  <p class="muted" style="margin-bottom:16px">Install it wherever you want to use it. If you sign into Claude Code with the same claude.ai account, an uploaded copy shows up there too, so keep just one copy.</p>
   <div class="grid two">
     <div class="panel">
       <span class="tag code">Claude Code</span>
-      <h3>Drop in the folder</h3>
-      <p class="muted" style="margin:0 0 4px">Put the <code>fresh-eyes</code> folder in your skills directory:</p>
-      <pre><code>cp -R fresh-eyes ~/.claude/skills/fresh-eyes</code></pre>
-      <p class="muted" style="margin:10px 0 0">Start a new session and it’s picked up automatically.</p>
+      <h3>One command</h3>
+      <p class="muted" style="margin:0 0 4px">Run this in your terminal:</p>
+      <pre><code>git clone https://github.com/lokiwhy12/fresh-eyes ~/.claude/skills/fresh-eyes</code></pre>
+      <p class="muted" style="margin:10px 0 0">Then type <code>/fresh-eyes</code>. If it appears in the menu, you’re set. Updating, the no-git option, and more: <a href="https://github.com/lokiwhy12/fresh-eyes#install">full install steps</a>.</p>
     </div>
     <div class="panel">
       <span class="tag chat">Claude app (claude.ai)</span>
       <h3>Upload the zip</h3>
-      <p class="muted" style="margin:0">Open <strong>Settings</strong>, find <strong>Skills</strong> (under Capabilities), and upload the skill <code>.zip</code> as a custom skill. Needs a paid plan with code execution on.</p>
+      <p class="muted" style="margin:0">Any plan, including Free. Download <a href="https://github.com/lokiwhy12/fresh-eyes/releases/latest/download/fresh-eyes.zip"><code>fresh-eyes.zip</code></a> (not GitHub’s green Code button), turn on code execution in <strong>Settings → Capabilities</strong>, then go to <strong>Customize → Skills → + → Upload a skill</strong> and switch it on. <a href="https://github.com/lokiwhy12/fresh-eyes#install">Full install steps</a>.</p>
     </div>
   </div>
 
-  <p class="foot">Fresh Eyes is a set of instructions, nothing more. It writes nothing outside its own folder. Full details in <code>README.md</code>. The two methods live in <code>references/fan-out.md</code> and <code>references/single-mind.md</code>; the “full” upgrade lives in <code>references/full.md</code>.</p>
+  <p class="foot">Fresh Eyes is a set of instructions, nothing more. Source, full details and license: <a href="https://github.com/lokiwhy12/fresh-eyes">github.com/lokiwhy12/fresh-eyes</a>. The two methods live in <code>references/fan-out.md</code> and <code>references/single-mind.md</code>; the “full” upgrade lives in <code>references/full.md</code>.</p>
 
 </div>
 </body>

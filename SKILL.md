@@ -14,6 +14,7 @@ description: >-
   "poke holes and make it better", "get independent eyes on X", "what am I
   missing", "what would someone else say". Lean toward firing whenever the user
   wants outside perspective or an impartial re-examination of a piece of thinking.
+license: MIT
 ---
 
 # Fresh Eyes — router
