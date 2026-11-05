@@ -23,8 +23,8 @@ optional upgrade you have to ask for:
   For small things it just takes 2–3 quick independent reads.
 - **Single-mind method** (when it can't). One mind runs the same
   criticize → improvise → synthesize discipline in sequence, under strict rules
-  that stand in for independence. This is what runs in the **Claude app
-  (claude.ai)** chat, which can't spawn separate helpers.
+  that stand in for independence. This runs in any session that can't spawn
+  separate helpers — for example a plain chat.
 - **"Full fresh eyes" (optional upgrade).** Say *"full fresh eyes"* and, if your
   setup can reach other AI companies' models, it adds the strongest model from each
   of them — writing their own ideas blind, and cross-examining everyone else's.
@@ -61,7 +61,9 @@ method.
 3. Custom skills need a paid plan with code execution enabled, and they're
    per-account (each person uploads their own).
 
-In the app it uses the **single-mind** method automatically.
+It picks the method by what the session can do, not by which app it's in: a
+session that can start helper agents gets the multi-reviewer method, one that
+can't gets single-mind — and the result says which one ran.
 
 ### Using both?
 
